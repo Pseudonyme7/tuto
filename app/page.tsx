@@ -1,22 +1,11 @@
-import { people } from './components/data.js';
-import { getImageUrl } from './components/utils.js';
+function Cup({ guest }: { guest: number }) {
+  return <h2>Tea cup for guest #{guest}</h2>;
+}
 
-export default function List() {
-  const chemists = people.filter(person =>
-    person.profession === 'chemist'
-  );
-  const listItems = chemists.map(person =>
-    <li key={person.id}>
-      <img
-        src={getImageUrl(person)}
-        alt={person.name}
-      />
-      <p>
-        <b>{person.name}:</b>
-        {' ' + person.profession + ' '}
-        known for {person.accomplishment}
-      </p>
-    </li>
-  );
-  return <ul>{listItems}</ul>;
+export default function TeaGathering() {
+  const cups = [];
+  for (let i = 1; i <= 12; i++) {
+    cups.push(<Cup key={i} guest={i} />);
+  }
+  return cups;
 }
