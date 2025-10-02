@@ -1,11 +1,14 @@
-function Cup({ guest }: { guest: number }) {
-  return <h2>Tea cup for guest #{guest}</h2>;
-}
+import FancyText from './components/FancyText';
+import InspirationGenerator from './components/InspirationGenerator';
+import Copyright from './components/Copyright';
 
-export default function TeaGathering() {
-  const cups = [];
-  for (let i = 1; i <= 12; i++) {
-    cups.push(<Cup key={i} guest={i} />);
-  }
-  return cups;
+export default function App() {
+  return (
+    <>
+      <FancyText title text="Get Inspired App" />
+      <InspirationGenerator>
+        <Copyright year={2004} />
+      </InspirationGenerator>
+    </>
+  );
 }
