@@ -1,23 +1,37 @@
-import Avatar from './components/Avatar.js';
-
-function Card({ children }: { children: React.ReactNode }) {
+function Item({ name, isPacked }: { name: string; isPacked: boolean }) {
+  let itemContent: React.ReactNode = name;
+  if (isPacked) {
+    itemContent = (
+      <del>
+        {name + " ✅"}
+      </del>
+    );
+  }
   return (
-    <div className="card">
-      {children}
-    </div>
+    <li className="item">
+      {itemContent}
+    </li>
   );
 }
 
-export default function Profile() {
+export default function PackingList() {
   return (
-    <Card>
-      <Avatar
-        size={100}
-        person={{ 
-          name: 'Katsuko Saruhashi',
-          imageId: 'YfeOqp2'
-        }}
-      />
-    </Card>
+    <section>
+      <h1>Sally Ride's Packing List</h1>
+      <ul>
+        <Item 
+          isPacked={true} 
+          name="Space suit" 
+        />
+        <Item 
+          isPacked={true} 
+          name="Helmet with a golden leaf" 
+        />
+        <Item 
+          isPacked={false} 
+          name="Photo of Tam" 
+        />
+      </ul>
+    </section>
   );
 }
