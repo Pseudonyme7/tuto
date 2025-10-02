@@ -1,20 +1,19 @@
-function TableOfContents() {
+function Profile() {
   return (
-    <ol>
-      <li>Components: UI Building Blocks</li>
-      <li>Defining a Component</li>
-      <li>Using a Component</li>
-    </ol>
+    <img
+      src="https://i.imgur.com/MK3eW3As.jpg"
+      alt="Katherine Johnson"
+    />
   );
 }
 
-export default function Home() {
+export default function Gallery() {
   return (
-    <main>
-      <article>
-        <h1>My First Component</h1>
-        <TableOfContents />
-      </article>
-    </main>
+    <section>
+      <h1>Amazing scientists</h1>
+      <Profile />
+      <Profile />
+      <Profile />
+    </section>
   );
 }
